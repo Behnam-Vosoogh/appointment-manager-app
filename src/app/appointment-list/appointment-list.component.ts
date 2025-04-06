@@ -10,5 +10,8 @@ export class AppointmentListComponent {
   newAppointemntTitle: string = '';
   newAppointemntDate: Date = new Date();
   appointments: Appointment []= [];
+  addPointment() {
+    alert(this.newAppointemntTitle+" - "+this.newAppointemntDate);
+  };
 
 }
