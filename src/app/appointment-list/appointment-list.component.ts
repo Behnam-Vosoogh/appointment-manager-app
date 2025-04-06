@@ -10,8 +10,18 @@ export class AppointmentListComponent {
   newAppointemntTitle: string = '';
   newAppointemntDate: Date = new Date();
   appointments: Appointment []= [];
-  addPointment() {
-    alert(this.newAppointemntTitle+" - "+this.newAppointemntDate);
+  addAppointment() {
+    if(this.newAppointemntTitle.trim().length&&this.newAppointemntDate){
+      let newAppointment:Appointment ={
+        id:Date.now(),
+        title:this.newAppointemntTitle,
+        date:this.newAppointemntDate
+      }
+      this.appointments.push(newAppointment);
+      this.newAppointemntTitle ="";
+      this.newAppointemntDate=new Date();
+      alert(this.appointments.length);
+    }
   };
 
 }
